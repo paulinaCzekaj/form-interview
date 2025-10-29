@@ -1,0 +1,17 @@
+# Dependencies
+node_modules/
+
+# Build outputs
+dist/
+build/
+
+# Generated files
+*.tsbuildinfo
+
+# Package files
+package-lock.json
+
+# Config files that shouldn't be formatted
+.eslintrc*
+*.config.js
+*.config.ts
