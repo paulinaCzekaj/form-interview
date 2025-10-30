@@ -6,10 +6,10 @@ import { StyledDataTableItem } from './DataTableItem.styles';
 
 interface DataItemProps {
   data: FormData;
-  handleRemove: (id: string) => void;
+  onRemove: (id: string) => void;
 }
 
-export const DataTableItem = ({ data, handleRemove }: DataItemProps) => {
+export const DataTableItem = ({ data, onRemove }: DataItemProps) => {
   return (
     <>
       <StyledDataTableItem title={data.email}>
@@ -21,7 +21,7 @@ export const DataTableItem = ({ data, handleRemove }: DataItemProps) => {
       <StyledDataTableItem>{data.number}</StyledDataTableItem>
       <StyledDataTableItem>
         <StyledButtonIcon
-          onClick={() => handleRemove(data.id)}
+          onClick={() => onRemove(data.id)}
           aria-label={`Usuń ${data.name}`}
         >
           <FontAwesomeIcon icon={faTrash} size="sm" />

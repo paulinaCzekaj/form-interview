@@ -8,14 +8,10 @@ export const DataCardList = () => {
   const { data } = useContext(DataContext);
   const [idToRemove, setIdToRemove] = useState<string | null>(null);
 
-  const handleRemove = (id: string) => {
-    setIdToRemove(id);
-  };
-
   return (
     <StyledDataCardList>
       {data.map((item) => (
-        <DataCard key={item.id} data={item} handleRemove={handleRemove} />
+        <DataCard key={item.id} data={item} onRemove={setIdToRemove} />
       ))}
       <ConfirmDialog idToRemove={idToRemove} setIdToRemove={setIdToRemove} />
     </StyledDataCardList>

@@ -1,6 +1,4 @@
-import { useCallback, useContext } from 'react';
 import { StyledDataCard, StyledIconLabel } from './DataCard.styles';
-import { DataContext } from '../../contexts/DataContext';
 import type { FormData } from '../../types/types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
@@ -12,10 +10,10 @@ import { StyledButtonIcon } from '../ButtonIcon/ButtonIcon.styles';
 
 interface DataCardProps {
   data: FormData;
-  handleRemove: (id: string) => void;
+  onRemove: (id: string) => void;
 }
 
-export const DataCard = ({ data, handleRemove }: DataCardProps) => {
+export const DataCard = ({ data, onRemove }: DataCardProps) => {
   return (
     <StyledDataCard>
       <div>
@@ -30,7 +28,7 @@ export const DataCard = ({ data, handleRemove }: DataCardProps) => {
         </StyledIconLabel>
       </div>
       <StyledButtonIcon
-        onClick={() => handleRemove(data.id)}
+        onClick={() => onRemove(data.id)}
         aria-label={`Usuń ${data.name}`}
       >
         <FontAwesomeIcon icon={faTrash} size="lg" />

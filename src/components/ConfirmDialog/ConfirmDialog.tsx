@@ -31,7 +31,7 @@ export const ConfirmDialog = ({
 
   return (
     <StyledConfirmDialog>
-      <StyledConfirmDialogContent>
+      <StyledConfirmDialogContent role="dialog" aria-modal="true">
         <h2>Usuwanie</h2>
         <p>Czy na pewno chcesz usunąć te dane?</p>
         <StyledButtonsWrapper>

@@ -8,10 +8,6 @@ export const DataTable = () => {
   const { data } = useContext(DataContext);
   const [idToRemove, setIdToRemove] = useState<string | null>(null);
 
-  const handleRemove = (id: string) => {
-    setIdToRemove(id);
-  };
-
   return (
     <StyledDataTable>
       <StyledDataTableHeader>E-mail</StyledDataTableHeader>
@@ -19,7 +15,7 @@ export const DataTable = () => {
       <StyledDataTableHeader>Numer</StyledDataTableHeader>
       <StyledDataTableHeader />
       {data.map((item) => (
-        <DataTableItem key={item.id} data={item} handleRemove={handleRemove} />
+        <DataTableItem key={item.id} data={item} onRemove={setIdToRemove} />
       ))}
       <ConfirmDialog idToRemove={idToRemove} setIdToRemove={setIdToRemove} />
     </StyledDataTable>
