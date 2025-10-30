@@ -5,7 +5,7 @@ export const theme: DefaultTheme = {
     primary: '#0083FD', // button
     base: '#1D3461', // background
     secondary: '#E8F0F8', // wrapper
-    focus: '#0083FD',
+    focus: '#0083FD', // primary
     border: '#A0A0A0', // border + placeholder
     error: '#c1272D',
     white: '#FFFFFF',
@@ -15,7 +15,7 @@ export const theme: DefaultTheme = {
     smallButton: '24px',
     mediumButton: '48px',
     input: '48px',
-    wrapper: '426px',
+    wrapper: '444px',
   },
   widths: {
     wrapper: '1030px',

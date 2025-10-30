@@ -1,7 +1,8 @@
 import { styled } from 'styled-components';
 
-export const StyledButton = styled.button`
-  background-color: ${({ theme }) => theme.colors.primary};
+export const StyledButton = styled.button<{ variant: 'primary' | 'error' }>`
+  background-color: ${({ theme, variant }) =>
+    variant === 'error' ? theme.colors.error : theme.colors.primary};
   color: ${({ theme }) => theme.colors.white};
   padding: 0 16px;
   align-items: center;

@@ -37,7 +37,7 @@ export const Input = ({
         hasError={!!error}
       />
       <StyledLabel htmlFor={id} hasError={!!error}>
-        {label}
+        {label} *
       </StyledLabel>
       <StyledHelperText hasError={!!error}>
         {error?.message || helperText}

@@ -12,29 +12,27 @@ import { StyledButtonIcon } from '../ButtonIcon/ButtonIcon.styles';
 
 interface DataCardProps {
   data: FormData;
+  handleRemove: (id: string) => void;
 }
 
-export const DataCard = ({ data }: DataCardProps) => {
-  const { removeData } = useContext(DataContext);
-
-  const handleRemove = useCallback(() => {
-    removeData(data.id);
-  }, [data.id, removeData]);
-
+export const DataCard = ({ data, handleRemove }: DataCardProps) => {
   return (
     <StyledDataCard>
       <div>
         <h5>{data.name}</h5>
         <StyledIconLabel>
           <FontAwesomeIcon icon={faEnvelope} />
-          <span>{data.email}</span>
+          <span title={data.email}>{data.email}</span>
         </StyledIconLabel>
         <StyledIconLabel>
           <FontAwesomeIcon icon={faPhone} />
-          <span>{data.number}</span>
+          <span title={data.number.toString()}>{data.number}</span>
         </StyledIconLabel>
       </div>
-      <StyledButtonIcon onClick={handleRemove} aria-label={`Usuń ${data.name}`}>
+      <StyledButtonIcon
+        onClick={() => handleRemove(data.id)}
+        aria-label={`Usuń ${data.name}`}
+      >
         <FontAwesomeIcon icon={faTrash} size="lg" />
       </StyledButtonIcon>
     </StyledDataCard>
