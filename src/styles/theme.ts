@@ -6,7 +6,7 @@ export const theme: DefaultTheme = {
     base: '#1D3461', // background
     secondary: '#E8F0F8', // wrapper
     focus: '#0083FD',
-    border: '#A0A0A0', // base + opacity 30%
+    border: '#A0A0A0', // border + placeholder
     error: '#c1272D',
     white: '#FFFFFF',
     black: '#000000', // text
@@ -19,6 +19,9 @@ export const theme: DefaultTheme = {
   },
   widths: {
     wrapper: '1030px',
+  },
+  sizes: {
+    borderRadius: '8px',
   },
   breakpoints: {
     desktop: '1024px',

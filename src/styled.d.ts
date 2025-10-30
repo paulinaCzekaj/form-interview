@@ -21,6 +21,9 @@ declare module 'styled-components' {
     widths: {
       wrapper: string;
     };
+    sizes: {
+      borderRadius: string;
+    };
     breakpoints: {
       desktop: string;
       mobile: string;

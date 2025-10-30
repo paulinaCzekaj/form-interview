@@ -1,13 +1,10 @@
 import { DataContext } from '../../contexts/DataContext';
-import { DataItem } from '../DataItem/DataItem';
+import { DataTable } from '../DataTable/DataTable';
 import { StyledSectionName } from '../SectionName/SectionName.styles';
 import { StyledWrapperItem } from '../Wrapper/Wrapper.styles';
-import {
-  StyledDataList,
-  StyledDataListHeader,
-  StyledEmpty,
-} from './DataList.styles';
+import { StyledEmpty } from './DataList.styles';
 import { useContext } from 'react';
+import { DataCardList } from '../DataCardList/DataCardList';
 
 export const DataList = () => {
   const { data } = useContext(DataContext);
@@ -16,15 +13,10 @@ export const DataList = () => {
     <StyledWrapperItem>
       <StyledSectionName>Lista</StyledSectionName>
       {data.length > 0 ? (
-        <StyledDataList>
-          <StyledDataListHeader>E-mail</StyledDataListHeader>
-          <StyledDataListHeader>Imię</StyledDataListHeader>
-          <StyledDataListHeader>Numer</StyledDataListHeader>
-          <StyledDataListHeader />
-          {data.map((item) => (
-            <DataItem key={item.id} data={item} />
-          ))}
-        </StyledDataList>
+        <>
+          <DataTable />
+          <DataCardList />
+        </>
       ) : (
         <StyledEmpty>Zapisz dane, aby je wyświetlić</StyledEmpty>
       )}

@@ -29,4 +29,13 @@ export const GlobalStyles = createGlobalStyle`
             padding: 16px;
         }
     }
+    
+    h2 {
+      font-weight: 700;
+      font-size: 2.25rem;
+    }
+
+    h5 {
+       font-size: 1.5rem;
+    }
 `;

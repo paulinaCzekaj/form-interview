@@ -1,6 +1,6 @@
 import { useForm } from 'react-hook-form';
 import { Button } from '../Button/Button';
-import { LabelInput } from '../LabelInput/LabelInput';
+import { Input } from '../Input/Input';
 import { StyledForm } from './Form.styles';
 import { formSchema, type FormValues } from '../../types/schema';
 import { zodResolver } from '@hookform/resolvers/zod';
@@ -31,21 +31,21 @@ export const Form = () => {
       <StyledSectionName>Formularz</StyledSectionName>
       <StyledForm onSubmit={handleSubmit(onSubmit)}>
         <div>
-          <LabelInput
+          <Input
             label="E-mail"
             id="email"
             type="email"
             error={errors.email}
             register={register}
           />
-          <LabelInput
+          <Input
             label="Imię"
             id="name"
             type="text"
             error={errors.name}
             register={register}
           />
-          <LabelInput
+          <Input
             label="Numer"
             id="number"
             valueAsNumber

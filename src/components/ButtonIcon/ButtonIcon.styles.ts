@@ -5,9 +5,11 @@ export const StyledButtonIcon = styled.button`
   border: none;
   cursor: pointer;
   background-color: transparent;
+
   &:hover {
     filter: brightness(0.9);
   }
+
   &:active {
     filter: brightness(0.6);
   }

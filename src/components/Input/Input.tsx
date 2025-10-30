@@ -1,13 +1,13 @@
 import {
   StyledLabel,
   StyledInput,
-  StyledLabelInput,
   StyledHelperText,
-} from './LabelInput.styles';
+  StyledInputWrapper,
+} from './Input.styles';
 import type { FieldError, UseFormRegister } from 'react-hook-form';
 import type { FormValues } from '../../types/schema';
 
-interface LabelInputProps {
+interface InputProps {
   label: string;
   id: keyof FormValues;
   type: 'text' | 'email' | 'number';
@@ -17,7 +17,7 @@ interface LabelInputProps {
   helperText?: string;
 }
 
-export const LabelInput = ({
+export const Input = ({
   label,
   id,
   type,
@@ -25,9 +25,9 @@ export const LabelInput = ({
   error,
   valueAsNumber,
   helperText,
-}: LabelInputProps) => {
+}: InputProps) => {
   return (
-    <StyledLabelInput>
+    <StyledInputWrapper>
       <StyledInput
         id={id}
         type={type}
@@ -42,6 +42,6 @@ export const LabelInput = ({
       <StyledHelperText hasError={!!error}>
         {error?.message || helperText}
       </StyledHelperText>
-    </StyledLabelInput>
+    </StyledInputWrapper>
   );
 };

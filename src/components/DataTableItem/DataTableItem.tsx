@@ -1,16 +1,16 @@
 import type { FormData } from '../../types/types';
 import { useContext, useCallback } from 'react';
 import { DataContext } from '../../contexts/DataContext';
-import { StyledDataItem } from './DataItem.styles';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrash } from '@fortawesome/free-solid-svg-icons';
 import { StyledButtonIcon } from '../ButtonIcon/ButtonIcon.styles';
+import { StyledDataTableItem } from './DataTableItem.styles';
 
 interface DataItemProps {
   data: FormData;
 }
 
-export const DataItem = ({ data }: DataItemProps) => {
+export const DataTableItem = ({ data }: DataItemProps) => {
   const { removeData } = useContext(DataContext);
 
   const handleRemove = useCallback(() => {
@@ -19,17 +19,17 @@ export const DataItem = ({ data }: DataItemProps) => {
 
   return (
     <>
-      <StyledDataItem>{data.email}</StyledDataItem>
-      <StyledDataItem>{data.name}</StyledDataItem>
-      <StyledDataItem>{data.number}</StyledDataItem>
-      <StyledDataItem>
+      <StyledDataTableItem>{data.email}</StyledDataTableItem>
+      <StyledDataTableItem>{data.name}</StyledDataTableItem>
+      <StyledDataTableItem>{data.number}</StyledDataTableItem>
+      <StyledDataTableItem>
         <StyledButtonIcon
           onClick={handleRemove}
           aria-label={`Usuń ${data.name}`}
         >
           <FontAwesomeIcon icon={faTrash} />
         </StyledButtonIcon>
-      </StyledDataItem>
+      </StyledDataTableItem>
     </>
   );
 };

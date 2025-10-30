@@ -1,6 +1,6 @@
 import { styled } from 'styled-components';
 
-export const StyledLabelInput = styled.div`
+export const StyledInputWrapper = styled.div`
   position: relative;
 `;
 
@@ -12,7 +12,7 @@ export const StyledInput = styled.input<{ hasError: boolean }>`
   color: ${({ theme }) => theme.colors.base};
   width: 100%;
   padding: 16px;
-  border-radius: 8px;
+  border-radius: ${({ theme }) => theme.sizes.borderRadius};
   font-size: 16px;
   transition:
     border-color 0.1s ease-in-out,
@@ -50,7 +50,7 @@ export const StyledLabel = styled.label<{ hasError: boolean }>`
   color: ${({ theme, hasError }) =>
     hasError ? theme.colors.error : theme.colors.border};
   position: absolute;
-  left: 8px;
+  left: 16px;
   padding: 0 4px;
   font-weight: 500;
   top: 14px;
