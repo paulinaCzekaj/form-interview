@@ -2,7 +2,7 @@ import {
   StyledLabel,
   StyledInput,
   StyledLabelInput,
-  StyledError,
+  StyledHelperText,
 } from './LabelInput.styles';
 import type { FieldError, UseFormRegister } from 'react-hook-form';
 import type { FormValues } from '../../types/schema';
@@ -31,14 +31,17 @@ export const LabelInput = ({
       <StyledInput
         id={id}
         type={type}
-        placeholder={label}
+        placeholder=""
         {...register(id, { valueAsNumber })}
         aria-invalid={!!error}
+        hasError={!!error}
       />
-      <StyledLabel>{label}</StyledLabel>
-      {(helperText || error) && (
-        <StyledError>{error?.message || helperText}</StyledError>
-      )}
+      <StyledLabel htmlFor={id} hasError={!!error}>
+        {label}
+      </StyledLabel>
+      <StyledHelperText hasError={!!error}>
+        {error?.message || helperText}
+      </StyledHelperText>
     </StyledLabelInput>
   );
 };

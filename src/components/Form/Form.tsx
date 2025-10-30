@@ -17,6 +17,7 @@ export const Form = () => {
     // setError,
   } = useForm<FormValues>({
     resolver: zodResolver(formSchema),
+    mode: 'onChange',
   });
 
   const onSubmit = (data: FormValues) => {
@@ -26,29 +27,31 @@ export const Form = () => {
 
   return (
     <StyledForm onSubmit={handleSubmit(onSubmit)}>
-      <LabelInput
-        label="E-mail"
-        id="email"
-        type="email"
-        error={errors.email}
-        register={register}
-      />
-      <LabelInput
-        label="Imię"
-        id="name"
-        type="text"
-        error={errors.name}
-        register={register}
-      />
-      <LabelInput
-        label="Numer"
-        id="number"
-        valueAsNumber
-        type="number"
-        error={errors.number}
-        register={register}
-        helperText="Numer 9 cyfrowy."
-      />
+      <div>
+        <LabelInput
+          label="E-mail"
+          id="email"
+          type="email"
+          error={errors.email}
+          register={register}
+        />
+        <LabelInput
+          label="Imię"
+          id="name"
+          type="text"
+          error={errors.name}
+          register={register}
+        />
+        <LabelInput
+          label="Numer"
+          id="number"
+          valueAsNumber
+          type="number"
+          error={errors.number}
+          register={register}
+          helperText="Numer 9 cyfrowy."
+        />
+      </div>
       <div>
         <Button text="Zapisz" type="submit" />
       </div>

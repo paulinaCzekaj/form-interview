@@ -6,4 +6,8 @@ export const Separator = styled.div`
   align-self: stretch;
   margin: 8px 0;
   border-radius: 100%;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    display: none;
+  }
 `;

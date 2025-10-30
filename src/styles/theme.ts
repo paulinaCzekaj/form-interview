@@ -7,9 +7,19 @@ export const theme: DefaultTheme = {
     secondary: '#FFFFFF', // wrapper
     focus: '#0083fd',
     border: '#1D346130', // base + opacity 30%
+    error: '#d32f2f',
   },
-  height: {
-    button: '48px',
+  heights: {
+    smallButton: '24px',
+    mediumButton: '48px',
     input: '48px',
+    wrapper: '374px',
+  },
+  widths: {
+    wrapper: '1030px',
+  },
+  breakpoints: {
+    desktop: '1024px',
+    mobile: '768px',
   },
 };

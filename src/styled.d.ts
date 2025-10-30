@@ -8,10 +8,20 @@ declare module 'styled-components' {
       secondary: string; // wrapper
       focus: string;
       border: string;
+      error: string;
     };
-    height: {
-      button: string;
+    heights: {
+      smallButton: string;
+      mediumButton: string;
       input: string;
+      wrapper: string;
+    };
+    widths: {
+      wrapper: string;
+    };
+    breakpoints: {
+      desktop: string;
+      mobile: string;
     };
   }
 }

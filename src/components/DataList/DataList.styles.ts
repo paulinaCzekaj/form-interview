@@ -11,7 +11,8 @@ export const StyledDataList = styled.div`
 export const StyledDataListHeader = styled.div`
   border-bottom: 1px solid ${({ theme }) => theme.colors.border};
   padding: 0 4px 4px;
-  font-weight: 600;
+  font-weight: 500;
+  font-size: 0.9rem;
   color: ${({ theme }) => theme.colors.primary};
 `;
 

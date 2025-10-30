@@ -17,11 +17,17 @@ export const DataItem = ({ data }: DataItemProps) => {
 
   return (
     <>
+      <StyledDataItem>{data.email}</StyledDataItem>
       <StyledDataItem>{data.name}</StyledDataItem>
       <StyledDataItem>{data.number}</StyledDataItem>
-      <StyledDataItem>{data.email}</StyledDataItem>
       <StyledDataItem>
-        <Button text="Usuń" type="button" onClick={handleRemove} size="small" />
+        <Button
+          text="Usuń"
+          type="button"
+          onClick={handleRemove}
+          size="small"
+          variant="error"
+        />
       </StyledDataItem>
     </>
   );

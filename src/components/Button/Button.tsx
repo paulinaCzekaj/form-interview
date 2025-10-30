@@ -5,6 +5,7 @@ interface ButtonProps {
   type?: 'button' | 'submit' | 'reset';
   onClick?: () => void;
   size?: 'small' | 'medium';
+  variant?: 'primary' | 'error';
 }
 
 export const Button = ({
@@ -12,9 +13,10 @@ export const Button = ({
   type = 'button',
   onClick,
   size = 'medium',
+  variant = 'primary',
 }: ButtonProps) => {
   return (
-    <StyledButton type={type} onClick={onClick} size={size}>
+    <StyledButton type={type} onClick={onClick} size={size} variant={variant}>
       <span>{text}</span>
     </StyledButton>
   );

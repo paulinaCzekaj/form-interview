@@ -10,20 +10,23 @@ export const GlobalStyles = createGlobalStyle`
     body {
         background-color: ${({ theme }) => theme.colors.base};
         color: ${({ theme }) => theme.colors.base};
-        font-family: Helvetica, Arial, sans-serif;
+        font-family: Roboto,Helvetica, Arial, sans-serif;
         font-size: 16px;
         line-height: 1.5;
-        height: 100vh;
-    }
-
-    #root {
-        height: 100%;
+        letter-spacing: 0;
     }
 
     main {
-        height: 100%;
+        min-height: 100vh;
         display: flex;
         justify-content: center;
         align-items: center;
+        width: 100%;
+        max-width: 100vw;
+        padding: 24px;
+        
+        @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+            padding: 16px;
+        }
     }
 `;
