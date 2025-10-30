@@ -6,6 +6,8 @@ import { formSchema, type FormValues } from '../../types/schema';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { DataContext } from '../../contexts/DataContext';
 import { useContext } from 'react';
+import { StyledSectionName } from '../SectionName/SectionName.styles';
+import { StyledWrapperItem } from '../Wrapper/Wrapper.styles';
 
 export const Form = () => {
   const { addData } = useContext(DataContext);
@@ -14,7 +16,6 @@ export const Form = () => {
     handleSubmit,
     formState: { errors },
     reset,
-    // setError,
   } = useForm<FormValues>({
     resolver: zodResolver(formSchema),
     mode: 'onChange',
@@ -26,35 +27,38 @@ export const Form = () => {
   };
 
   return (
-    <StyledForm onSubmit={handleSubmit(onSubmit)}>
-      <div>
-        <LabelInput
-          label="E-mail"
-          id="email"
-          type="email"
-          error={errors.email}
-          register={register}
-        />
-        <LabelInput
-          label="Imię"
-          id="name"
-          type="text"
-          error={errors.name}
-          register={register}
-        />
-        <LabelInput
-          label="Numer"
-          id="number"
-          valueAsNumber
-          type="number"
-          error={errors.number}
-          register={register}
-          helperText="Numer 9 cyfrowy."
-        />
-      </div>
-      <div>
-        <Button text="Zapisz" type="submit" />
-      </div>
-    </StyledForm>
+    <StyledWrapperItem>
+      <StyledSectionName>Formularz</StyledSectionName>
+      <StyledForm onSubmit={handleSubmit(onSubmit)}>
+        <div>
+          <LabelInput
+            label="E-mail"
+            id="email"
+            type="email"
+            error={errors.email}
+            register={register}
+          />
+          <LabelInput
+            label="Imię"
+            id="name"
+            type="text"
+            error={errors.name}
+            register={register}
+          />
+          <LabelInput
+            label="Numer"
+            id="number"
+            valueAsNumber
+            type="number"
+            error={errors.number}
+            register={register}
+            helperText="Numer 9 cyfrowy."
+          />
+        </div>
+        <div>
+          <Button text="Zapisz" type="submit" />
+        </div>
+      </StyledForm>
+    </StyledWrapperItem>
   );
 };

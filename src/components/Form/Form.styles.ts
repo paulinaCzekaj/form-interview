@@ -5,7 +5,7 @@ export const StyledForm = styled.form`
   flex-direction: column;
   gap: 23px;
   flex: 1;
-  &>div: first-child {
+  & > div:first-child {
     display: flex;
     flex-direction: column;
     gap: 8px;

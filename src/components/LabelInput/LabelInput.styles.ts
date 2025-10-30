@@ -7,7 +7,7 @@ export const StyledLabelInput = styled.div`
 export const StyledInput = styled.input<{ hasError: boolean }>`
   border: 1px solid
     ${({ theme, hasError }) =>
-      hasError ? `${theme.colors.error} !important` : theme.colors.border};
+      hasError ? theme.colors.error : theme.colors.border};
   background-color: ${({ theme }) => theme.colors.secondary};
   color: ${({ theme }) => theme.colors.base};
   width: 100%;
@@ -17,21 +17,24 @@ export const StyledInput = styled.input<{ hasError: boolean }>`
   transition:
     border-color 0.1s ease-in-out,
     outline-width 0.1s ease-in-out;
-  outline-width: ${({ hasError }) => (hasError ? '0 !important' : '0')};
+  outline-width: 0;
 
-  &:hover {
-    outline: 2px solid ${({ theme }) => theme.colors.focus};
-    border-color: ${({ theme }) => theme.colors.focus};
-    & + label {
-      color: ${({ theme }) => theme.colors.focus};
-    }
+  &:hover:not(:focus) {
+    outline: ${({ hasError, theme }) =>
+      hasError ? 0 : `2px solid ${theme.colors.focus}`};
   }
 
   &:focus {
     outline-width: 0;
-    border-color: ${({ theme }) => theme.colors.focus};
+  }
+  &:focus,
+  &:hover {
+    border-color: ${({ theme, hasError }) =>
+      hasError ? theme.colors.error : theme.colors.focus};
+
     & + label {
-      color: ${({ theme }) => theme.colors.focus};
+      color: ${({ theme, hasError }) =>
+        hasError ? theme.colors.error : theme.colors.focus};
     }
   }
 
@@ -44,7 +47,8 @@ export const StyledInput = styled.input<{ hasError: boolean }>`
 
 export const StyledLabel = styled.label<{ hasError: boolean }>`
   background-color: ${({ theme }) => theme.colors.secondary};
-  color: ${({ theme }) => theme.colors.border};
+  color: ${({ theme, hasError }) =>
+    hasError ? theme.colors.error : theme.colors.border};
   position: absolute;
   left: 8px;
   padding: 0 4px;
@@ -52,10 +56,9 @@ export const StyledLabel = styled.label<{ hasError: boolean }>`
   top: 14px;
   transition:
     top 0.1s ease-in-out,
-    font-size 0.1s ease-in-out;
+    font-size 0.1s ease-in-out,
+    color 0.1s ease-in-out;
   font-size: 1rem;
-  color: ${({ theme, hasError }) =>
-    hasError ? `${theme.colors.error} !important` : theme.colors.border};
 `;
 
 export const StyledHelperText = styled.p<{ hasError: boolean }>`

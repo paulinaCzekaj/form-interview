@@ -9,6 +9,8 @@ declare module 'styled-components' {
       focus: string;
       border: string;
       error: string;
+      white: string;
+      black: string;
     };
     heights: {
       smallButton: string;

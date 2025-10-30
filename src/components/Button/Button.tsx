@@ -4,20 +4,12 @@ interface ButtonProps {
   text: string;
   type?: 'button' | 'submit' | 'reset';
   onClick?: () => void;
-  size?: 'small' | 'medium';
-  variant?: 'primary' | 'error';
 }
 
-export const Button = ({
-  text,
-  type = 'button',
-  onClick,
-  size = 'medium',
-  variant = 'primary',
-}: ButtonProps) => {
+export const Button = ({ text, type = 'button', onClick }: ButtonProps) => {
   return (
-    <StyledButton type={type} onClick={onClick} size={size} variant={variant}>
-      <span>{text}</span>
+    <StyledButton type={type} onClick={onClick}>
+      {text}
     </StyledButton>
   );
 };

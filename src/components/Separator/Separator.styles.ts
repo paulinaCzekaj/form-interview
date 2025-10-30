@@ -1,13 +1,13 @@
 import styled from 'styled-components';
 
 export const Separator = styled.div`
-  background-color: ${({ theme }) => theme.colors.border};
-  width: 2px;
-  align-self: stretch;
-  margin: 8px 0;
-  border-radius: 100%;
+  display: none;
 
-  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
-    display: none;
+  @media (min-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    display: block;
+    background-color: ${({ theme }) => theme.colors.border};
+    width: 2px;
+    align-self: stretch;
+    margin: 8px 0;
   }
 `;

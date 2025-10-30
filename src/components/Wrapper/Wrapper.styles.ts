@@ -6,13 +6,24 @@ export const StyledWrapper = styled.div`
   border-radius: 16px;
   display: flex;
   justify-content: center;
-  gap: 56px;
-  height: ${({ theme }) => theme.heights.wrapper};
   width: 100%;
-  max-width: ${({ theme }) => theme.widths.wrapper};
-  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
-    flex-direction: column;
-    gap: 24px;
-    height: auto;
+  flex-direction: column;
+  gap: 48px;
+  height: auto;
+  flex-direction: column;
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    max-width: ${({ theme }) => theme.widths.wrapper};
+    height: ${({ theme }) => theme.heights.wrapper};
+    flex-direction: row;
+    gap: 32px;
   }
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
+    gap: 56px;
+  }
+`;
+
+export const StyledWrapperItem = styled.div`
+  flex: 1;
 `;
