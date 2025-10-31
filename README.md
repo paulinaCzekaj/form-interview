@@ -48,7 +48,7 @@ npm run build
 
 ### Lista
 
-![Widok listy](./screenshots/list.png)
+![Widok listy](./screenshots/list-2.png)
 
 ### Mobile
 
