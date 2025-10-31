@@ -2,14 +2,13 @@ import type { DefaultTheme } from 'styled-components';
 
 export const theme: DefaultTheme = {
   colors: {
-    primary: '#0083FD', // button
     base: '#1D3461', // background
+    primary: '#0083FD', // button
     secondary: '#E8F0F8', // wrapper
     focus: '#0083FD', // primary
     border: '#A0A0A0', // border + placeholder
     error: '#c1272D',
     white: '#FFFFFF',
-    black: '#000000', // text
   },
   heights: {
     smallButton: '24px',

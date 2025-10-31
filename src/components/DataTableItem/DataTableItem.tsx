@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrash } from '@fortawesome/free-solid-svg-icons';
 import { StyledButtonIcon } from '../ButtonIcon/ButtonIcon.styles';
 import { StyledDataTableItem } from './DataTableItem.styles';
+import { useCallback } from 'react';
 
 interface DataItemProps {
   data: FormData;
@@ -10,6 +11,10 @@ interface DataItemProps {
 }
 
 export const DataTableItem = ({ data, onRemove }: DataItemProps) => {
+  const handleRemove = useCallback(() => {
+    onRemove(data.id);
+  }, [data.id, onRemove]);
+
   return (
     <>
       <StyledDataTableItem title={data.email}>
@@ -21,7 +26,7 @@ export const DataTableItem = ({ data, onRemove }: DataItemProps) => {
       <StyledDataTableItem>{data.number}</StyledDataTableItem>
       <StyledDataTableItem>
         <StyledButtonIcon
-          onClick={() => onRemove(data.id)}
+          onClick={handleRemove}
           aria-label={`Usuń ${data.name}`}
         >
           <FontAwesomeIcon icon={faTrash} size="sm" />

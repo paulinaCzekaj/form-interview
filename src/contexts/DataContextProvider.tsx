@@ -1,4 +1,4 @@
-import { useCallback, useState, type PropsWithChildren } from 'react';
+import { useCallback, useMemo, useState, type PropsWithChildren } from 'react';
 import { DataContext } from './DataContext';
 import type { FormData } from '../types/types';
 import type { FormValues } from '../types/schema';
@@ -14,9 +14,11 @@ export const DataContextProvider = ({ children }: PropsWithChildren) => {
     setData((prev) => prev.filter((item) => item.id !== id));
   }, []);
 
-  return (
-    <DataContext value={{ data, addData, removeData }}>{children}</DataContext>
-  );
+  const value = useMemo(() => {
+    return { data, addData, removeData };
+  }, [data, addData, removeData]);
+
+  return <DataContext value={value}>{children}</DataContext>;
 };
 
 export default DataContextProvider;

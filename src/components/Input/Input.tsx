@@ -34,12 +34,12 @@ export const Input = ({
         placeholder=""
         {...register(id, { valueAsNumber })}
         aria-invalid={!!error}
-        hasError={!!error}
+        $hasError={!!error}
       />
-      <StyledLabel htmlFor={id} hasError={!!error}>
+      <StyledLabel htmlFor={id} $hasError={!!error}>
         {label} *
       </StyledLabel>
-      <StyledHelperText hasError={!!error}>
+      <StyledHelperText $hasError={!!error}>
         {error?.message || helperText}
       </StyledHelperText>
     </StyledInputWrapper>

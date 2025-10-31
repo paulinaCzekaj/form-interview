@@ -22,6 +22,9 @@ export const StyledIconLabel = styled.p`
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  display: flex;
+  align-items: center;
+
   svg {
     margin-right: 4px;
   }

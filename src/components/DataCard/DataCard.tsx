@@ -7,6 +7,7 @@ import {
   faTrash,
 } from '@fortawesome/free-solid-svg-icons';
 import { StyledButtonIcon } from '../ButtonIcon/ButtonIcon.styles';
+import { useCallback } from 'react';
 
 interface DataCardProps {
   data: FormData;
@@ -14,6 +15,10 @@ interface DataCardProps {
 }
 
 export const DataCard = ({ data, onRemove }: DataCardProps) => {
+  const handleRemove = useCallback(() => {
+    onRemove(data.id);
+  }, [data.id, onRemove]);
+
   return (
     <StyledDataCard>
       <div>
@@ -28,8 +33,9 @@ export const DataCard = ({ data, onRemove }: DataCardProps) => {
         </StyledIconLabel>
       </div>
       <StyledButtonIcon
-        onClick={() => onRemove(data.id)}
+        onClick={handleRemove}
         aria-label={`Usuń ${data.name}`}
+        title={`Usuń ${data.name}`}
       >
         <FontAwesomeIcon icon={faTrash} size="lg" />
       </StyledButtonIcon>

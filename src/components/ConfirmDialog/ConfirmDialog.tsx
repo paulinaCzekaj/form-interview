@@ -36,7 +36,7 @@ export const ConfirmDialog = ({
         <p>Czy na pewno chcesz usunąć te dane?</p>
         <StyledButtonsWrapper>
           <Button onClick={handleCancel} text="Anuluj" />
-          <Button onClick={handleRemove} text="Usuń" variant="error" />
+          <Button onClick={handleRemove} text="Usuń" $variant="error" />
         </StyledButtonsWrapper>
       </StyledConfirmDialogContent>
     </StyledConfirmDialog>

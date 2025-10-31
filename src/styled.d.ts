@@ -10,7 +10,6 @@ declare module 'styled-components' {
       border: string;
       error: string;
       white: string;
-      black: string;
     };
     heights: {
       smallButton: string;
